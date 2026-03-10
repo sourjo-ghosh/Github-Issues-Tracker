@@ -142,3 +142,19 @@ tabs.forEach(btn => {
     }
   });
 });
+
+
+const searchBtn = document.getElementById("search-btn")
+
+searchBtn.addEventListener('click',()=>{
+    const searchInput = document.getElementById("search-input")
+    const searchVal = searchInput.value.trim().toLowerCase();
+    console.log(searchVal)
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchVal}`
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) =>{
+       displayCard(data.data);
+    })
+    
+})

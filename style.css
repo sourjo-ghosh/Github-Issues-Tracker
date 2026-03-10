@@ -1,0 +1,12 @@
+body{
+    background: #F8FAFC;
+}
+
+
+.active {
+    background: #4A00FF;
+    color: #FFFFFF;
+}
+.inactive {
+    background-color: #FFFFFF;
+}

@@ -1,3 +1,4 @@
+// Login page
 const userNameInp = document.getElementById("username-input")
 const userPasswordInp = document.getElementById("userpassword-input")
 const signUpBtn = document.getElementById("signup-btn")
@@ -15,3 +16,11 @@ signUpBtn.addEventListener('click', () => {
         userPasswordInp.value = "";
     }
 })
+
+// Tab switching
+
+const allBtn = document.getElementById("all-btn")
+const openedBtn = document.getElementById("opened-btn")
+const closedBtn = document.getElementById("closed-btn")
+
+console.log(allBtn, openedBtn, closedBtn)

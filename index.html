@@ -16,73 +16,73 @@
 </head>
 
 <body>
-    <!-- Header section -->
-    <header>
-        <div class="navbar bg-base-100 shadow-sm">
-            <div class="w-11/12 mx-auto flex">
-                <div class="flex-1">
-                    <div class="flex items-center gap-1 cursor-pointer">
-                        <img class="w-10" src="assets/github-logo.png" alt="">
-                        <p class="font-semibold text-[#1F2937] text-[16px] md:text-[24px] lg:text-[24px]">GitHub Issues
-                            Tracker</p>
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-xl p-6 w-[500px]">
+            <h2 id="modal-title" class="font-bold text-xl mb-2"></h2>
+            <div id="modal-status" class="mb-3"></div>
+            <p id="modal-description" class="text-[#64748B] text-sm mb-4"></p>
+            <div id="modal-labels" class="flex gap-2 mb-4"></div>
+            <div class="flex justify-between text-sm text-gray-500">
+                <span>Assignee: <span id="modal-assignee"></span></span>
+                <span id="modal-priority" class="font-semibold"></span>
+            </div>
+            <button id="modal-close" class="mt-4 bg-[#4A00FF] text-white px-4 py-2 rounded-lg">Close</button>
+        </div>
+    </div>
+    <main id="main-page" class="">
+
+        <!-- Header section -->
+        <header>
+            <div class="navbar bg-base-100 shadow-sm">
+                <div class="w-11/12 mx-auto flex">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-1 cursor-pointer">
+                            <img class="w-10" src="assets/github-logo.png" alt="">
+                            <p class="font-semibold text-[#1F2937] text-[16px] md:text-[24px] lg:text-[24px]">GitHub
+                                Issues
+                                Tracker</p>
+                        </div>
+                    </div>
+                    <div class="flex  gap-2">
+                        <input type="text" placeholder="Search issues..."
+                            class="input input-bordered w-24 md:w-auto focus:outline-none" />
+                        <button class="btn btn-primary font-semibold text-[16px] text-[#ffffff]">
+                            <i class="fa-sharp fa-solid fa-plus"></i>New Issue
+                        </button>
                     </div>
                 </div>
-                <div class="flex  gap-2">
-                    <input type="text" placeholder="Search issues..."
-                        class="input input-bordered w-24 md:w-auto focus:outline-none" />
-                    <button class="btn btn-primary font-semibold text-[16px] text-[#ffffff]">
-                        <i class="fa-sharp fa-solid fa-plus"></i>New Issue
-                    </button>
+            </div>
+        </header>
+        <!-- Tab section -->
+        <section class="w-11/12 mx-auto p-5 bg-[#ffffff] mt-9 mb-2 rounded-lg">
+            <div class="bg-[#ffffff] space-x-2">
+                <button id="all-btn" class="tab-btn btn px-9 active">All</button>
+                <button id="opened-btn" class="tab-btn btn px-9">Open</button>
+                <button id="closed-btn" class="tab-btn btn px-9">Closed</button>
+            </div>
+        </section>
+        <!-- Status info -->
+        <section class="w-11/12 mx-auto p-4 bg-[#ffffff] mt-9 mb-2 rounded-lg flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-[#ECE4FF] p-3 rounded-full">
+                    <img src="assets/Aperture.png" alt="">
+                </div>
+                <div>
+                    <h2 id="status-info" class="text-[20px] font-semibold text-[#1F2937]">50 Issues</h2>
+                    <p class="text-[#64748B]">Track and manage your project issues</p>
                 </div>
             </div>
-        </div>
-    </header>
-    <!-- Tab section -->
-    <section class="w-10/12 mx-auto p-5 bg-[#ffffff] mt-9 mb-2 rounded-lg">
-        <div class="bg-[#ffffff] space-x-2">
-            <button id="all-btn" class="btn px-9 active">All</button>
-            <button id="opened-btn" class="btn px-9">Opened</button>
-            <button id="closed-btn" class="btn px-9">Closed</button>
-        </div>
-    </section>
-    <!-- Status info -->
-     <section class="w-10/12 mx-auto p-4 bg-[#ffffff] mt-9 mb-2 rounded-lg flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div class="bg-[#ECE4FF] p-3 rounded-full">
-                <img src="assets/Aperture.png" alt="">
+            <div class="flex gap-3">
+                <p><span class="text-green-600"><i class="fa-solid fa-circle"></i></span> Open</p>
+                <p><span class="text-purple-600"><i class="fa-solid fa-circle"></i></span> close</p>
             </div>
-            <div>
-                <h2 class="text-[20px] font-semibold text-[#1F2937]">50 Issues</h2>
-                <p class="text-[#64748B]">Track and manage your project issues</p>
-            </div>
-        </div>
-        <div class="flex gap-3">
-            <p><span class="text-green-600"><i class="fa-solid fa-circle"></i></span> Open</p>
-            <p><span class="text-purple-600"><i class="fa-solid fa-circle"></i></span> close</p>
-        </div>
-     </section>
-     <!-- Main Section -->
-      <section class="w-10/12 mx-auto p-4 bg-[#ffffff] mt-9 mb-2 rounded-lg grid grid-cols-4">
-        <!-- cards sections -->
-        <div class="card border-2">
-            <div class="flex justify-between">
-                <p>
-                    <img src="assets/Open-Status.png" alt="">
-                </p>
-                <span class="bg-red-100 text-red-500 px-5 py-1 rounded-2xl">HIGH</span>
-            </div>
-            <div>
-                <p class="text-[#1F2937] font-semibold">Fix navigation menu on mobile devices</p>
-                <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-            </div>
-            <div>
-                <p></p>
-            </div>
-        </div>
-      </section>
+        </section>
+        <!-- Main Section -->
+        <section class="card-container w-11/12 mx-auto p-4 bg-[#ffffff] mt-9 mb-2 rounded-lg grid grid-cols-4 gap-3">
+        </section>
+    </main>
     <!-- Login page  -->
-    <section class="p-10 mx-auto flex flex-col justify-center items-center hidden">
-
+    <section id="login-page" class="p-10 mx-auto flex flex-col justify-center items-center hidden">
         <div class="flex flex-col justify-center items-center space-y-3">
             <div class="banner-image mx-auto block">
                 <img src="assets/github-logo.png" alt="">

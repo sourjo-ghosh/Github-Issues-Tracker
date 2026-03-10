@@ -10,8 +10,8 @@ signUpBtn.addEventListener('click', () => {
         document.getElementById("incorrect-password").classList.add("hidden")
         userNameInp.value = "";
         userPasswordInp.value = "";
-        // document.getElementById("login-page").classList.add("hidden")
-        // document.getElementById("main-page").classList.remove("hidden")
+        document.getElementById("login-page").classList.add("hidden")
+        document.getElementById("main-page").classList.remove("hidden")
     } else {
         document.getElementById("incorrect-password").classList.remove("hidden");
         userNameInp.value = "";

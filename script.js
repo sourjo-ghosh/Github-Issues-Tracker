@@ -20,6 +20,15 @@ signUpBtn.addEventListener('click', () => {
 })
 
 // Tab switching
+const showSpinner = () => {
+  document.getElementById("spinner").classList.remove("hidden");
+  document.querySelector(".card-container").classList.add("hidden");
+}
+
+const hideSpinner = () => {
+  document.getElementById("spinner").classList.add("hidden");
+  document.querySelector(".card-container").classList.remove("hidden");
+}
 
 
 const statusInfo = document.getElementById("status-info")
@@ -28,12 +37,14 @@ const tabs = document.querySelectorAll(".tab-btn");
 
 let allData = [];
 const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+showSpinner();
 fetch(url)
   .then(res => res.json())
   .then(data => {
     allData = data.data;
     displayCard(allData); 
     // console.log(data.data.status)
+    hideSpinner();
   });
 
   const getLabelStyle = (label) => {
@@ -129,6 +140,7 @@ const displayCardDetails = (detail)=>{
 }
 tabs.forEach(btn => {
   btn.addEventListener("click", (e) => {
+     showSpinner();
     tabs.forEach(b => b.classList.remove("active"));
     e.target.classList.add("active");
 
@@ -140,6 +152,7 @@ tabs.forEach(btn => {
       const filtered = allData.filter(d => d.status === status);
       displayCard(filtered); 
     }
+    hideSpinner();
   });
 });
 
@@ -149,12 +162,16 @@ const searchBtn = document.getElementById("search-btn")
 searchBtn.addEventListener('click',()=>{
     const searchInput = document.getElementById("search-input")
     const searchVal = searchInput.value.trim().toLowerCase();
-    console.log(searchVal)
+    // console.log(searchVal)
     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchVal}`
+    showSpinner();
     fetch(url)
     .then((res) => res.json())
     .then((data) =>{
        displayCard(data.data);
+       hideSpinner();
     })
-    
+    searchInput.value ="";
 })
+
+

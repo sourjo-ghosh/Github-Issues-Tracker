@@ -14,10 +14,14 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon icon -->
-     <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">  
 </head>
 
-<body>
+<body class="geist-font">
     <main id="main-page" class="hidden">
         <!-- Header section -->
         <header>
@@ -32,8 +36,8 @@
                         </div>
                     </div>
                     <div class="flex  gap-2">
-                        <input type="text" placeholder="Search issues..."
-                            id="search-input" class="input input-bordered w-24 md:w-auto focus:outline-none" />
+                        <input type="text" placeholder="Search issues..." id="search-input"
+                            class="input input-bordered w-24 md:w-auto focus:outline-none" />
                         <button id="search-btn" class="btn btn-primary font-semibold text-[16px] text-[#ffffff]">
                             <i class="fa-sharp fa-solid fa-plus"></i>New Issue
                         </button>
@@ -66,9 +70,9 @@
             </div>
         </section>
         <!-- loading spinner  -->
-         <div id="spinner" class="flex justify-center items-center mt-10 hidden">
-             <span class="w-10 h-10 loading loading-spinner text-info"></span>
-         </div>
+        <div id="spinner" class="flex justify-center items-center mt-10 hidden">
+            <span class="w-10 h-10 loading loading-spinner text-info"></span>
+        </div>
         <!-- Main Section -->
         <section
             class="card-container w-11/12 mx-auto p-4 bg-[#ffffff] mt-9 mb-2 rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  ">
@@ -129,7 +133,7 @@
     <dialog id="my_modal_1" class="modal">
         <div class="modal-box">
             <div id="detail-container" class="p-10">
-            
+
             </div>
             <div class="modal-action">
                 <form method="dialog">

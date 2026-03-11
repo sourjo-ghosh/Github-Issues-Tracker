@@ -10,3 +10,7 @@ body{
 .inactive {
     background-color: #FFFFFF;
 }
+
+.geist-font{
+    font-family: "Geist", sans-serif;
+}

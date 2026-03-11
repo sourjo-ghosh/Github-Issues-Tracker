@@ -4,8 +4,8 @@ const userPasswordInp = document.getElementById("userpassword-input")
 const signUpBtn = document.getElementById("signup-btn")
 
 signUpBtn.addEventListener('click', () => {
-    const userNameVal = userNameInp.value.trim();
-    const userPasswordVal = userPasswordInp.value.trim();
+    const userNameVal = userNameInp.value.trim().toLowerCase();
+    const userPasswordVal = userPasswordInp.value.trim().toLowerCase();
     if (userNameVal === "admin".trim() && userPasswordVal === "admin123".trim()) {
         document.getElementById("incorrect-password").classList.add("hidden")
         userNameInp.value = "";
